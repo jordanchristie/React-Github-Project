@@ -1,0 +1,63 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  height: 10em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  background: #333;
+}
+
+.top h1 {
+  color: #fafafa;
+}
+
+
+input {
+  height: 2em;
+  max-width: 60em;
+  margin-right: 1em;
+  border: none;
+  border-radius: 5px;
+  background: #767676;
+  outline: 0;
+  color: #fafafa;
+  font-size: 16px;
+}
+
+button {
+  height: 3.5em;
+  width: 5em;
+  border: none;
+  border-radius: 5px;
+  background: #767676;
+  color: #fafafa
+}
+
+.user-profile {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  margin: 20px;
+}
+
+.user-profile img {
+  height: 150px;
+  width: 150px;
+}
+
+.user-caption {
+  width: 30%;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-around;
+}
