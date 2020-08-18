@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
 
-
-const Search = (props) => {
-    return (
-      <div className="search-bar">
-          <input onChange={props.handleChange} type="text" placeholder="Search Github"/>
-          <button onClick={props.getUser}>Find</button>
-      </div>
-    ) 
-}
+const Search = ({ handleChange, getUser }) => {
+  return (
+    <div className="search-bar">
+      <input onChange={handleChange} type="text" placeholder="Search Github" />
+      <button onClick={getUser}>Find</button>
+    </div>
+  );
+};
 
 export default Search;
