@@ -1,4 +1,5 @@
 import React from "react";
+import "./User.scss";
 
 const User = ({ user }) => {
   console.log(user);

@@ -1,7 +1,6 @@
 import React from "react";
-import Header from "./Header";
-import Search from "./Search";
-import User from "./User";
+import Header from "./Header/Header";
+import User from "./User/User";
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +15,8 @@ class App extends React.Component {
     this.setState({ name: event.target.value });
   };
 
-  getUser = () => {
+  getUser = (e) => {
+    e.preventDefault();
     fetch(`https://api.github.com/users/${this.state.name}`)
       .then((response) => response.json())
       .then((user) => {
@@ -40,8 +40,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="top">
-          <Header />
-          <Search handleChange={this.handleChange} getUser={this.getUser} />
+          <Header handleChange={this.handleChange} getUser={this.getUser} />
         </div>
         {Object.keys(user).length ? <User user={user} /> : null}
       </div>

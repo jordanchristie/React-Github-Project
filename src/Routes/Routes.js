@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import App from "../Components/App";
-import User from "../Components/User";
+import User from "../Components/User/User";
 
 const Routes = () => {
   return (
