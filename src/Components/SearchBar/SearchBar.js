@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./SearchBar.scss";
+import { UserContext } from "../../Context/UserContext";
 
-const SearchBar = ({ handleChange, getUser }) => {
+const SearchBar = () => {
+  const [name, setName] = useState("");
+  const { fetchUser } = useContext(UserContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetchUser(name);
+  };
+
   return (
-    <div className="search-bar">
-      <form onSubmit={getUser}>
+    <div className="searchbar">
+      <form onSubmit={handleSubmit}>
         <input
-          onChange={handleChange}
+          onChange={(e) => setName(e.target.value)}
           type="text"
           placeholder="Search Github"
         />
-        <button type="submit">Find</button>
+        <button className="searchbar-button" type="submit">
+          Find
+        </button>
       </form>
     </div>
   );

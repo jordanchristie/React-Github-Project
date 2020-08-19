@@ -1,51 +1,22 @@
 import React from "react";
 import Header from "./Header/Header";
 import User from "./User/User";
+import { UserContextProvider } from "../Context/UserContext";
+import { ErrorContextProvider } from "../Context/ErrorContext";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: {},
-      name: "",
-    };
-  }
-
-  handleChange = (event) => {
-    this.setState({ name: event.target.value });
-  };
-
-  getUser = (e) => {
-    e.preventDefault();
-    fetch(`https://api.github.com/users/${this.state.name}`)
-      .then((response) => response.json())
-      .then((user) => {
-        console.log(user);
-        this.setState({
-          user,
-          // name: data.name,
-          // url: data.url,
-          // avatar: data.avatar_url,
-          // blog: data.blog,
-          // followers: data.followers,
-          // location: data.location,
-          // bio: data.bio,
-          // repos: data.public_repos,
-        });
-      });
-  };
-
-  render() {
-    const { user } = this.state;
-    return (
-      <div>
-        <div className="top">
-          <Header handleChange={this.handleChange} getUser={this.getUser} />
-        </div>
-        {Object.keys(user).length ? <User user={user} /> : null}
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <ErrorContextProvider>
+      <UserContextProvider>
+        <main>
+          <Header />
+          <div className="container">
+            <User />
+          </div>
+        </main>
+      </UserContextProvider>
+    </ErrorContextProvider>
+  );
+};
 
 export default App;

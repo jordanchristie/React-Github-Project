@@ -1,0 +1,19 @@
+header {
+  width: 100%;
+  background: #333;
+  margin: 0 auto;
+  .nav-container {
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 60px;
+  }
+
+  .title {
+    order: 2;
+    color: #fff;
+  }
+}

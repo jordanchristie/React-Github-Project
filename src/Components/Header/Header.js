@@ -5,8 +5,10 @@ import SearchBar from "../SearchBar/SearchBar";
 const Header = () => {
   return (
     <header>
-      <h1 className="title"> Github Profile Search </h1>
-      <SearchBar />
+      <div className="nav-container">
+        <h1 className="title"> Github Profile Search </h1>
+        <SearchBar />
+      </div>
     </header>
   );
 };
