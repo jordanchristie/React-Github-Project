@@ -351,6 +351,7 @@ template {
 }
 
 /* My styles */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 html,
 body {
@@ -359,6 +360,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .top {
@@ -373,4 +375,6 @@ body {
 
 .container {
   max-width: 1260px;
+  margin: 0 auto;
+  padding: 20px;
 }

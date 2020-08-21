@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import "./User.scss";
+import RepoList from "../RepoList/RepoList";
 import { UserContext } from "../../Context/UserContext";
+import "./User.scss";
 
 const User = () => {
   const { user, error } = useContext(UserContext);
@@ -9,7 +10,7 @@ const User = () => {
       {error && <h1>{error.message}</h1>}
       <div>
         {Object.keys(user).length ? (
-          <div className="user-container">
+          <section className="user-container">
             <div className="user-profile">
               <a href={user.url}>
                 <img src={user.avatar_url} alt="User Profile" />
@@ -25,7 +26,7 @@ const User = () => {
 
             <div className="user-info">
               <div className="col-sm-3">
-                <h3>Blog</h3>
+                <h3>Website</h3>
                 <a href={user.blog}>{user.blog}</a>
               </div>
 
@@ -39,7 +40,8 @@ const User = () => {
                 <p>{user.public_repos}</p>
               </div>
             </div>
-          </div>
+            <RepoList username={user.login} />
+          </section>
         ) : null}
       </div>
     </section>
